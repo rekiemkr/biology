@@ -1,24 +1,360 @@
 <!--The content below is only a placeholder and can be replaced.-->
 <div style="text-align:center">
-  <h1>
+  <h1 class="display-1">
     {{ title }}
   </h1>
 </div>
-<div id="padre"> 
+<br>
+<div style="text-align:center">
+  <h2>  1. Escoja las caracteristicas de los padres </h2>
+</div>
+<hr>
+<div id="padre" class="row"> 
+  <div class="col-md-6 text-center">
   <div id="titlepadre">
     <h1>
         Padre
       </h1>
   </div>
-  <button with="50px" heigth="50px" (click)="cambiarOjosPrevius()"><--</button>
-  <img alt="ojos" src="../assets/imagen/Padre/Ojos/{{this.idojo}}.png">
-  <button with="50px" heigth="50px" (click)="cambiarOjosNext()">--></button>
+  <button class="btn btn-default" with="50px" heigth="50px" (click)="cambiarOjosPrevius()"><</button>
+  <img alt="ojos" width="250" height="120"  src="../assets/imagen/Padre/Ojos/{{this.idojo}}.png">
+  <button class="btn btn-default" with="50px" heigth="50px" (click)="cambiarOjosNext()">></button>
   <br>
-  <button with="50px" heigth="50px" (click)="cambiarNarizPrevius()"><--</button>
-  <img alt="nariz" src="../assets/imagen/Padre/Nariz/{{this.idnariz}}.png">
-  <button with="50px" heigth="50px" (click)="cambiarNarizNext()">--></button>
+  <button class="btn btn-default" with="50px" heigth="50px" (click)="cambiarNarizPrevius()"><</button>
+  <img alt="nariz" width="249" height="32" src="../assets/imagen/Padre/Nariz/{{this.idnariz}}.png">
+  <button class="btn btn-default" with="50px" heigth="50px" (click)="cambiarNarizNext()">></button>
   <br>
-  <button with="50px" heigth="50px" (click)="cambiarBocaPrevius()"><--</button>
-  <img alt="Boca" src="../assets/imagen/Padre/Boca/{{this.idboca}}.png">
-  <button with="50px" heigth="50px" (click)="cambiarBocaNext()">--></button>
+  <button class="btn btn-default" with="50px" heigth="50px" (click)="cambiarBocaPrevius()"><</button>
+  <img alt="Boca" width="250" height="92" src="../assets/imagen/Padre/Boca/{{this.idboca}}.png">
+  <button class="btn btn-default" with="50px" heigth="50px" (click)="cambiarBocaNext()">></button>
+  </div>
+  <div class="col-md-6 text-center">
+      <div id="titlepadre">
+        <h1>
+            Madre
+          </h1>
+      </div>
+      <button class="btn btn-default" with="50px" heigth="50px" (click)="cambiarOjosPreviusM()"><</button>
+      <img alt="ojos" width="250" height="120" src="../assets/imagen/Madre/Ojos/{{this.idojom}}.png">
+      <button class="btn btn-default" with="50px" heigth="50px" (click)="cambiarOjosNextM()">></button>
+      <br>
+      <button class="btn btn-default" with="50px" heigth="50px" (click)="cambiarNarizPreviusM()"><</button>
+      <img alt="nariz" width="249" height="32" src="../assets/imagen/Madre/Nariz/{{this.idnarizm}}.png">
+      <button class="btn btn-default" with="50px" heigth="50px" (click)="cambiarNarizNextM()">></button>
+      <br>
+      <button class="btn btn-default" with="50px" heigth="50px" (click)="cambiarBocaPreviusM()"><</button>
+      <img alt="Boca" width="250" height="92" src="../assets/imagen/Madre/Boca/{{this.idbocam}}.png">
+      <button class="btn btn-default" with="50px" heigth="50px" (click)="cambiarBocaNextM()">></button>
+      </div>
+</div>
+<br>
+<hr>
+<div style="text-align:center" class="form-check" >
+  <div>
+    <h2 >2.Seleccione el gen dominante de cada caracteristica</h2> 
+  </div>
+  <hr>
+<div class="row">  
+  <div class="col-md-4">
+    <h4>Ojos</h4>
+    <input type="radio" class="form-check-input" [(ngModel)]="carac1" name="group1" value="{{this.idojo}}">Padre<br>
+    <input type="radio" class="form-check-input" [(ngModel)]="carac1" name="group1" value="{{this.idojom}}">Madre <br>
+  </div>
+  <div class="col-md-4">
+    <h4>Nariz</h4>
+    <input type="radio" class="form-check-input" [(ngModel)]="carac2"  name="group2" value="{{this.idnariz}}">Padre <br>
+    <input type="radio" class="form-check-input" [(ngModel)]="carac2"  name="group2" value="{{this.idnarizm}}">Madre <br>
+  </div>  
+  <div class="col-md-4">  
+    <h4>Boca</h4>
+    <input type="radio" class="form-check-input" [(ngModel)]="carac3"  name="group3" value="{{this.idboca}}">Padre <br>
+    <input type="radio" class="form-check-input" [(ngModel)]="carac3"  name="group3" value="{{this.idbocam}}">Madre <br>
+  </div>  
+</div>
+</div> 
+<div class="text-center button1">
+    <h2>3.Generar el Hijo</h2>
+  <br>
+  <button class="btn btn-primary" (click)="generarHijo()">Generar Hijo</button>
+  <br>
+  <br>
+  <br>
+  <div class="col-md-12 text-center">
+      <img alt="ojos" width="250" height="120" src="../assets/imagen/Hijo/Ojos/{{this.idojoh}}.png">
+      <br>
+      <img alt="nariz" width="249" height="32" src="../assets/imagen/Hijo/Nariz/{{this.idnarizh}}.png">
+      <br>
+      <img alt="Boca" width="250" height="92" src="../assets/imagen/Hijo/Boca/{{this.idbocah}}.png">
+      </div>
+  <div class="text-center">
+    <br>
+    <span [ngSwitch]="this.carac1">
+    <p *ngSwitchCase="1">
+        75% de probabilidad ojos azules<br>
+        <ng-container *ngIf="this.idojom == 4; else elseTemplate">
+            25% de probabilidad ojos grises
+        </ng-container>
+        <ng-template #elseTemplate>
+            <ng-container *ngIf="this.idojom == 5; else elseTemplate">
+                25% de probabilidad ojos cafes
+            </ng-container>
+            <ng-template #elseTemplate>
+                25% de probabilidad ojos verdes
+            </ng-template>
+        </ng-template>
+    </p>
+    <p *ngSwitchCase="2">
+        75% de probabilidad ojos verdes<br>
+        <ng-container *ngIf="this.idojom == 4; else elseTemplate">
+            25% de probabilidad ojos grises
+        </ng-container>
+        <ng-template #elseTemplate>
+            <ng-container *ngIf="this.idojom == 5; else elseTemplate">
+                25% de probabilidad ojos cafes
+            </ng-container>
+            <ng-template #elseTemplate>
+                25% de probabilidad ojos verdes<br>
+                100% de probabilidad ojos verdes
+            </ng-template>
+        </ng-template>
+    </p>
+    <p *ngSwitchCase="3">
+        75% de probabilidad ojos cafes<br>
+        <ng-container *ngIf="this.idojom == 4; else elseTemplate">
+            25% de probabilidad ojos grises
+        </ng-container>
+        <ng-template #elseTemplate>
+            <ng-container *ngIf="this.idojom == 5; else elseTemplate">
+                25% de probabilidad ojos cafes<br>
+                100% de probabilidad ojos cafes
+            </ng-container>
+            <ng-template #elseTemplate>
+                25% de probabilidad ojos verdes
+            </ng-template>
+        </ng-template>
+    </p>
+    <p *ngSwitchCase="4">
+        75% de probabilidad ojos grises<br>
+        <ng-container *ngIf="this.idojo == 1; else elseTemplate">
+            25% de probabilidad ojos azules
+        </ng-container>
+        <ng-template #elseTemplate>
+            <ng-container *ngIf="this.idojo == 2; else elseTemplate">
+                25% de probabilidad ojos verdes
+            </ng-container>
+            <ng-template #elseTemplate>
+                25% de probabilidad ojos cafes
+            </ng-template>
+        </ng-template>
+    </p>
+    <p *ngSwitchCase="5">
+        75% de probabilidad ojos cafes<br>
+        <ng-container *ngIf="this.idojo == 1; else elseTemplate">
+            25% de probabilidad ojos azules
+        </ng-container>
+        <ng-template #elseTemplate>
+            <ng-container *ngIf="this.idojo == 2; else elseTemplate">
+                25% de probabilidad ojos verdes
+            </ng-container>
+            <ng-template #elseTemplate>
+                25% de probabilidad ojos cafes<br>
+                100% de probabilidad ojos cafes
+            </ng-template>
+        </ng-template>
+    </p>
+    <p *ngSwitchCase="6">
+        75% de probabilidad ojos verdes<br>
+        <ng-container *ngIf="this.idojo == 1; else elseTemplate">
+            25% de probabilidad ojos azules
+        </ng-container>
+        <ng-template #elseTemplate>
+            <ng-container *ngIf="this.idojo == 2; else elseTemplate">
+                25% de probabilidad ojos verdes<br>
+                100% de probabilidad ojos verdes
+            </ng-container>
+            <ng-template #elseTemplate>
+                25% de probabilidad ojos cafes
+            </ng-template>
+        </ng-template>
+    </p>
+    </span>
+    <br>
+    <span [ngSwitch]="this.carac2">
+        <p *ngSwitchCase="1">
+            75% de probabilidad nariz pequeña<br>
+            <ng-container *ngIf="this.idnarizm == 4; else elseTemplate">
+                25% de probabilidad nariz respingada
+            </ng-container>
+            <ng-template #elseTemplate>
+                <ng-container *ngIf="this.idnarizm == 5; else elseTemplate">
+                    25% de probabilidad nariz clasica
+                </ng-container>
+                <ng-template #elseTemplate>
+                    25% de probabilidad nariz aguileña
+                </ng-template>
+            </ng-template>
+        </p>
+        <p *ngSwitchCase="2">
+            75% de probabilidad nariz ondulada<br>
+            <ng-container *ngIf="this.idnarizm == 4; else elseTemplate">
+                25% de probabilidad nariz respingada
+            </ng-container>
+            <ng-template #elseTemplate>
+                <ng-container *ngIf="this.idnarizm == 5; else elseTemplate">
+                    25% de probabilidad nariz clasica
+                </ng-container>
+                <ng-template #elseTemplate>
+                    25% de probabilidad nariz aguileña
+                </ng-template>
+            </ng-template>
+        </p>
+        <p *ngSwitchCase="3">
+            75% de probabilidad nariz grande y gruesa<br>
+            <ng-container *ngIf="this.idnarizm == 4; else elseTemplate">
+                25% de probabilidad nariz respingada
+            </ng-container>
+            <ng-template #elseTemplate>
+                <ng-container *ngIf="this.idnarizm == 5; else elseTemplate">
+                    25% de probabilidad nariz clasica
+                </ng-container>
+                <ng-template #elseTemplate>
+                    25% de probabilidad nariz aguileña
+                </ng-template>
+            </ng-template>
+            
+        </p>
+        <p *ngSwitchCase="4">
+            75% de probabilidad nariz respingada<br>
+            <ng-container *ngIf="this.idnarizm == 1; else elseTemplate">
+                25% de probabilidad nariz pequeña
+            </ng-container>
+            <ng-template #elseTemplate>
+                <ng-container *ngIf="this.idnarizm == 2; else elseTemplate">
+                    25% de probabilidad nariz ondulada
+                </ng-container>
+                <ng-template #elseTemplate>
+                    25% de probabilidad nariz grande y gruesa
+                </ng-template>
+            </ng-template> 
+        </p>
+        <p *ngSwitchCase="5">
+            75% de probabilidad nariz clasica<br>
+            <ng-container *ngIf="this.idnarizm == 1; else elseTemplate">
+                25% de probabilidad nariz pequeña
+            </ng-container>
+            <ng-template #elseTemplate>
+                <ng-container *ngIf="this.idnarizm == 2; else elseTemplate">
+                    25% de probabilidad nariz ondulada
+                </ng-container>
+                <ng-template #elseTemplate>
+                    25% de probabilidad nariz grande y gruesa
+                </ng-template>
+            </ng-template> 
+        </p>
+        <p *ngSwitchCase="6">
+            75% de probabilidad nariz aguileña<br>
+            <ng-container *ngIf="this.idnarizm == 1; else elseTemplate">
+                25% de probabilidad nariz pequeña
+            </ng-container>
+            <ng-template #elseTemplate>
+                <ng-container *ngIf="this.idnarizm == 2; else elseTemplate">
+                    25% de probabilidad nariz ondulada
+                </ng-container>
+                <ng-template #elseTemplate>
+                    25% de probabilidad nariz grande y gruesa
+                </ng-template>
+            </ng-template> 
+        </p>
+        </span>
+    <span [ngSwitch]="this.carac3">
+        <p *ngSwitchCase="1">
+            75% de probabilidad boca larga<br>
+            <ng-container *ngIf="this.idnarizm == 4; else elseTemplate">
+                25% de probabilidad boca gruesa
+            </ng-container>
+            <ng-template #elseTemplate>
+                <ng-container *ngIf="this.idnarizm == 5; else elseTemplate">
+                    25% de probabilidad nariz clasica
+                </ng-container>
+                <ng-template #elseTemplate>
+                    25% de probabilidad nariz aguileña
+                </ng-template>
+            </ng-template>
+        </p>
+        <p *ngSwitchCase="2">
+            75% de probabilidad boca pequeña<br>
+            <ng-container *ngIf="this.idnarizm == 4; else elseTemplate">
+                25% de probabilidad nariz respingada
+            </ng-container>
+            <ng-template #elseTemplate>
+                <ng-container *ngIf="this.idnarizm == 5; else elseTemplate">
+                    25% de probabilidad nariz clasica
+                </ng-container>
+                <ng-template #elseTemplate>
+                    25% de probabilidad nariz aguileña
+                </ng-template>
+            </ng-template>
+        </p>
+        <p *ngSwitchCase="3">
+            75% de probabilidad nariz grande y gruesa<br>
+            <ng-container *ngIf="this.idnarizm == 4; else elseTemplate">
+                25% de probabilidad nariz respingada
+            </ng-container>
+            <ng-template #elseTemplate>
+                <ng-container *ngIf="this.idnarizm == 5; else elseTemplate">
+                    25% de probabilidad nariz clasica
+                </ng-container>
+                <ng-template #elseTemplate>
+                    25% de probabilidad nariz aguileña
+                </ng-template>
+            </ng-template>
+            
+        </p>
+        <p *ngSwitchCase="4">
+            75% de probabilidad nariz respingada<br>
+            <ng-container *ngIf="this.idnarizm == 1; else elseTemplate">
+                25% de probabilidad nariz pequeña
+            </ng-container>
+            <ng-template #elseTemplate>
+                <ng-container *ngIf="this.idnarizm == 2; else elseTemplate">
+                    25% de probabilidad nariz ondulada
+                </ng-container>
+                <ng-template #elseTemplate>
+                    25% de probabilidad nariz grande y gruesa
+                </ng-template>
+            </ng-template> 
+        </p>
+        <p *ngSwitchCase="5">
+            75% de probabilidad nariz clasica<br>
+            <ng-container *ngIf="this.idnarizm == 1; else elseTemplate">
+                25% de probabilidad nariz pequeña
+            </ng-container>
+            <ng-template #elseTemplate>
+                <ng-container *ngIf="this.idnarizm == 2; else elseTemplate">
+                    25% de probabilidad nariz ondulada
+                </ng-container>
+                <ng-template #elseTemplate>
+                    25% de probabilidad nariz grande y gruesa
+                </ng-template>
+            </ng-template> 
+        </p>
+        <p *ngSwitchCase="6">
+            75% de probabilidad nariz aguileña<br>
+            <ng-container *ngIf="this.idnarizm == 1; else elseTemplate">
+                25% de probabilidad nariz pequeña
+            </ng-container>
+            <ng-template #elseTemplate>
+                <ng-container *ngIf="this.idnarizm == 2; else elseTemplate">
+                    25% de probabilidad nariz ondulada
+                </ng-container>
+                <ng-template #elseTemplate>
+                    25% de probabilidad nariz grande y gruesa
+                </ng-template>
+            </ng-template> 
+        </p>
+        </span>
+  </div>
+      <br>
+      <br>
+      <br>
 </div>
